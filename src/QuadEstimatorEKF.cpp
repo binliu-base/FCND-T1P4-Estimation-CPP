@@ -89,13 +89,14 @@ void QuadEstimatorEKF::UpdateFromIMU(V3F accel, V3F gyro)
   //       (Quaternion<float> also has a IntegrateBodyRate function, though this uses quaternions, not Euler angles)
 
   ////////////////////////////// BEGIN STUDENT CODE ///////////////////////////
-  // SMALL ANGLE GYRO INTEGRATION:
-  // (replace the code below)
-  // make sure you comment it out when you add your own code -- otherwise e.g. you might integrate yaw twice
-
-  float predictedPitch = pitchEst + dtIMU * gyro.y;
-  float predictedRoll = rollEst + dtIMU * gyro.x;
-  ekfState(6) = ekfState(6) + dtIMU * gyro.z;	// yaw
+  
+  //integrate the body rates into new Euler angles.
+  Quaternion<float> rot = Quaternion<float>::FromEuler123_RPY(rollEst, pitchEst, ekfState(6));
+  rot.IntegrateBodyRate(gyro, dtIMU);
+  V3D eulerRPY = rot.ToEulerRPY();
+  float predictedRoll = static_cast<float>(eulerRPY[0]);
+  float predictedPitch = static_cast<float>(eulerRPY[1]);
+  ekfState(6) = static_cast<float>(eulerRPY[2]);
 
   // normalize yaw to -pi .. pi
   if (ekfState(6) > F_PI) ekfState(6) -= 2.f*F_PI;
@@ -161,7 +162,14 @@ VectorXf QuadEstimatorEKF::PredictState(VectorXf curState, float dt, V3F accel, 
   Quaternion<float> attitude = Quaternion<float>::FromEuler123_RPY(rollEst, pitchEst, curState(6));
 
   ////////////////////////////// BEGIN STUDENT CODE ///////////////////////////
+  predictedState(0) = curState(0) + curState(3) * dt;
+  predictedState(1) = curState(1) + curState(4) * dt;
+  predictedState(2) = curState(2) + curState(5) * dt;
 
+  V3F accel_w = attitude.Rotate_BtoI(accel);
+  predictedState[3] = curState(3) + accel_w.x * dt;
+  predictedState[4] = curState(4) + accel_w.y * dt;
+  predictedState[5] = curState(5) + accel_w.z * dt - CONST_GRAVITY * dt;
 
   /////////////////////////////// END STUDENT CODE ////////////////////////////
 
