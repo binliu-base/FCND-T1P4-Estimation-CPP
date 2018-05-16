@@ -4,6 +4,10 @@
 #include "Utility/StringUtils.h"
 #include "Math/Quaternion.h"
 
+#include "iostream"
+using namespace std;
+
+
 using namespace SLR;
 
 const int QuadEstimatorEKF::QUAD_EKF_NUM_STATES;
@@ -308,6 +312,16 @@ void QuadEstimatorEKF::UpdateFromMag(float magYaw)
   //    (you don't want to update your yaw the long way around the circle)
   //  - The magnetomer measurement covariance is available in member variable R_Mag
   ////////////////////////////// BEGIN STUDENT CODE ///////////////////////////
+
+  hPrime(0,6) = 1;
+  zFromX(0) = ekfState(6);
+  float diff = z(0) - zFromX(0);
+  if (diff > F_PI) {
+	  zFromX(0) += 2.f*F_PI;
+  }
+  else if (diff < -F_PI) {
+	  zFromX(0) -= 2.f*F_PI;
+  }
 
 
   /////////////////////////////// END STUDENT CODE ////////////////////////////
