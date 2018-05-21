@@ -1,11 +1,6 @@
 # FCND-Term1-P4-Estimation
 
-### 1. Project Overview
-
-The goal of this project is to design and build the estimation portion of the controller used in the CPP simulator, which will control the quadrotors to fly the desired trajectory in the 3D environment with your estimator and your custom controller (from the previous project). 
-
-
-### 2. Breakdown of Implement Estimator (Project Rubric)
+### 1. Project Rubric
 
 #### 1. Determine the standard deviation of the measurement noise of both GPS X data and Accelerometer X data.
 
