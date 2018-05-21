@@ -231,7 +231,7 @@ V3F QuadControl::LateralPositionControl(V3F posCmd, V3F velCmd, V3F pos, V3F vel
   // to this variable
   V3F accelCmd = accelCmdFF;
 
-  /////////////////////////////// BEGIN SOLUTION //////////////////////////////
+  ////////////////////////////// BEGIN STUDENT CODE ///////////////////////////
 
   velCmd += kpPosXY * (posCmd - pos);
 
@@ -246,7 +246,7 @@ V3F QuadControl::LateralPositionControl(V3F posCmd, V3F velCmd, V3F pos, V3F vel
     accelCmd = accelCmd * maxAccelXY / accelCmd.mag();
   }
 
-  //////////////////////////////// END SOLUTION ///////////////////////////////
+  //////////////////////////////// END STUDENT ///////////////////////////////
 
   return accelCmd;
 }
