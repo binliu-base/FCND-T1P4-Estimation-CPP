@@ -1,6 +1,6 @@
 # FCND-Term1-P4-Estimation
 
-### 1. Project Rubric
+## Project Rubric
 
 #### 1. Determine the standard deviation of the measurement noise of both GPS X data and Accelerometer X data.
 
