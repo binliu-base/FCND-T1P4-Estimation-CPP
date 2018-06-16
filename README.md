@@ -2,8 +2,12 @@
 Udacity Flying Car Nanodegree - Term 1 - Project 4 - Estimation
 
 ### 1. Project Overview
+Goal of the project is to developing the estimation portion of the controller used in the CPP simulator.
+By the end of the project, The simulated quad will be flying with the estimator and the custom controller (from the previous project)!
 
 #### 1.1 3D State Estimation Overview
+
+![ Cascade Control Architecture](./images/3d-control-arch.png)
 
 ### Project Rubric
 
