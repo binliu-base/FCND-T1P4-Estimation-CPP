@@ -15,6 +15,13 @@ The 3D Control Architecture Diagram shows the output of the state estimation (re
 
 ![ State Vector and Filters](./images/L19_S4_fullStateVector.PNG)
 
+Here, we're not going to estimate the entire state using an EKF. We're only going to be using an EKF to estimate x,y, z, there derivatives and their angle psi.
+To estimate the body rates p, q, and r we just use the direct measurements from the rate gyros. To estimate the roll and pitch angles which are referred to as the attitude, we're going to use another type of filter called a complimentary filter
+
+Please note, Often, the full state vector actually has more than 12 variables in it. That's because in addition to estimating the typical 12 variables, we often also want to keep track of the IMU biases. Remember from the lesson on sensors that bias is typically modeled as a random walk.
+Estimating the bias in real-time like this is what's known as "online identification". We'll learn more about this in the second course of term 2 of this Nanodegree program.
+
+
 ### Project Rubric
 
 #### 1. Determine the standard deviation of the measurement noise of both GPS X data and Accelerometer X data.
