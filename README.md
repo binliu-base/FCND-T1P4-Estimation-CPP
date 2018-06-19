@@ -13,7 +13,7 @@ The 3D Control Architecture Diagram shows the output of the state estimation (re
 
 #### 1.2 3D Estimation Overview
 
-![ State Vector and Filters ](./images/L19_S4_fullStateVector.png)
+![ State Vector and Filters](./images/L19_S4_fullStateVector.PNG)
 
 ### Project Rubric
 
