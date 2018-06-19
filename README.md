@@ -24,6 +24,7 @@ Estimating the bias in real-time like this is what's known as "online identifica
 #### 1.3 3D Estimation - EKF Control Tradeoffs
 
 ![EKF Control Input in the prediction stage](./images/EKF-control.png)
+
 We're going to be using the X, Y, and Z accelerations as well as the psi dot of Rate Gryo as the EKF control inputs.
 [this paper](https://eresearch.ozyegin.edu.tr/bitstream/handle/10679/947/Fusing%20inertial%20sensor%20data%20in%20an%20extended%20kalman%20filter%20for%203D%20camera%20tracking.pdf?sequence=2&isAllowed=y) goes over a thorough analysis of different approaches.
 
