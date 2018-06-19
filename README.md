@@ -7,20 +7,25 @@ By the end of the project, The simulated quad will be flying with the estimator 
 
 #### 1.1 3D Control Architecture
 
-![ Cascade Control Architecture](./images/3d-control-arch.png)
+![Cascade Control Architecture](./images/3d-control-arch.png)
 
 The 3D Control Architecture Diagram shows the output of the state estimation (red line) gets sent to each controller as control input.
 
-#### 1.2 3D Estimation Overview
+#### 1.2 3D Estimation - State Vector Tradeoffs
 
-![ State Vector and Filters](./images/L19_S4_fullStateVector.PNG)
+![State Vector and Filters](./images/L19_S4_fullStateVector.PNG)
 
-Here, we're not going to estimate the entire state using an EKF. We're only going to be using an EKF to estimate x,y, z, there derivatives and their angle psi.
+We're not going to estimate the entire state using an EKF. We're only going to be using an EKF to estimate x,y, z, there derivatives and their angle psi.
 To estimate the body rates p, q, and r we just use the direct measurements from the rate gyros. To estimate the roll and pitch angles which are referred to as the attitude, we're going to use another type of filter called a complimentary filter
 
 Please note, Often, the full state vector actually has more than 12 variables in it. That's because in addition to estimating the typical 12 variables, we often also want to keep track of the IMU biases. Remember from the lesson on sensors that bias is typically modeled as a random walk.
 Estimating the bias in real-time like this is what's known as "online identification". We'll learn more about this in the second course of term 2 of this Nanodegree program.
 
+#### 1.3 3D Estimation - EKF Control Tradeoffs
+
+![EKF Control Input in the prediction stage](./images/EKF-control.png)
+We're going to be using the X, Y, and Z accelerations as well as the psi dot of Rate Gryo as the EKF control inputs.
+[this paper](https://eresearch.ozyegin.edu.tr/bitstream/handle/10679/947/Fusing%20inertial%20sensor%20data%20in%20an%20extended%20kalman%20filter%20for%203D%20camera%20tracking.pdf?sequence=2&isAllowed=y) goes over a thorough analysis of different approaches.
 
 ### Project Rubric
 
