@@ -55,17 +55,19 @@ Project outline:
 
 ![](./images/sensor8.png)
 
-#### Step 4: Magnetometer Update ####
-
 ![](./images/sensor9.png)
 
-#### Step 5: Closed Loop + GPS Update ####
+#### Step 4: Magnetometer Update ####
 
 ![](./images/sensor10.png)
 
-#### Step 6: Adding Your Controller ####
+#### Step 5: Closed Loop + GPS Update ####
 
 ![](./images/sensor11.png)
+
+#### Step 6: Adding Your Controller ####
+
+
 
 ### 3. Project Rubric
 
