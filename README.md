@@ -29,6 +29,27 @@ Estimating the bias in real-time like this is what's known as "online identifica
 We're going to be using the X, Y, and Z accelerations as well as the psi dot of rate gryo as the EKF control inputs. 
 Because it is always better to fuse both sensors in the measurement stage and that in particular, accelerometer helps more with the 3D position tracking accuracy whereas gyroscope helps more with the 3D orientation trackingaccuracy ([this paper](https://eresearch.ozyegin.edu.tr/bitstream/handle/10679/947/Fusing%20inertial%20sensor%20data%20in%20an%20extended%20kalman%20filter%20for%203D%20camera%20tracking.pdf?sequence=2&isAllowed=y)).
 
+### 2. Implement of 3D Estimation
+
+We will be building up the estimator in the following steps. 
+
+Project outline:
+
+ - [Step 1: Sensor Noise](#step-1-sensor-noise)
+ - [Step 2: Attitude Estimation](#step-2-attitude-estimation)
+ - [Step 3: Prediction Step](#step-3-prediction-step)
+ - [Step 4: Magnetometer Update](#step-4-magnetometer-update)
+ - [Step 5: Closed Loop + GPS Update](#step-5-closed-loop--gps-update)
+ - [Step 6: Adding Your Controller](#step-6-adding-your-controller)
+
+
+### Step 1: Sensor Noise ###
+### Step 2: Attitude Estimation ###
+### Step 3: Prediction Step ###
+### Step 4: Magnetometer Update ###
+### Step 5: Closed Loop + GPS Update ###
+### Step 6: Adding Your Controller ###
+
 ### 3. Project Rubric
 
 #### 1. Determine the standard deviation of the measurement noise of both GPS X data and Accelerometer X data.
