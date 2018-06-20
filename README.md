@@ -43,12 +43,29 @@ Project outline:
  - [Step 6: Adding Your Controller](#step-6-adding-your-controller)
 
 
-### Step 1: Sensor Noise ###
-### Step 2: Attitude Estimation ###
-### Step 3: Prediction Step ###
-### Step 4: Magnetometer Update ###
-### Step 5: Closed Loop + GPS Update ###
-### Step 6: Adding Your Controller ###
+#### Step 1: Sensor Noise ####
+
+![](./images/sensor6.png)
+
+#### Step 2: Attitude Estimation ####
+
+![](./images/sensor7.png)
+
+#### Step 3: Prediction Step ####
+
+![](./images/sensor8.png)
+
+#### Step 4: Magnetometer Update ####
+
+![](./images/sensor9.png)
+
+#### Step 5: Closed Loop + GPS Update ####
+
+![](./images/sensor10.png)
+
+#### Step 6: Adding Your Controller ####
+
+![](./images/sensor11.png)
 
 ### 3. Project Rubric
 
