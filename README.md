@@ -2,8 +2,9 @@
 Udacity Flying Car Nanodegree - Term 1 - Project 4 - Estimation
 
 ### 1. Project Overview
-The goal of the project is to developing the estimation portion of the controller used in the CPP simulator.
-By the end of the project, The simulated quad will be flying with the estimator and the custom controller (from [the previous project](https://github.com/binliu-base/FCND-T1P3-Control-of-a-3D-Quadrotor))!
+
+This project is based on [the previous project](https://github.com/binliu-base/FCND-T1P3-Control-of-a-3D-Quadrotor), Instead of using the perfect estimation in last control project, We will developing the estimation portion of the controller, which will fuse 
+the noisy inertial sensor data (GPS, IMU, and magnetometer) to estimate current drone position, velocity, and attitude. 
 
 #### 1.1 3D Control Architecture
 
