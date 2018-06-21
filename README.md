@@ -45,7 +45,11 @@ Project outline:
 
 #### Step 1: Sensor Noise ####
 
+In the first step,  we will collect some simulated noisy sensor data and estimate the standard deviation of the quad's sensor.
+
 ![](./images/sensor6.png)
+
+Run the simulator, We can see ~68% of the measurement points fall into the +/- 1 sigma bound.
 
 #### Step 2: Attitude Estimation ####
 
